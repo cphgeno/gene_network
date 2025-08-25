@@ -39,7 +39,7 @@ class OptunaSampler:
         - results (NetworkAnalysisResults): Object that stores metrics for
                                             each iteration.
         - gene_subset (List[str]): Subset of genes to include in the network.
-        - score_threshold (float): Minimum confidence score to keep an
+        - confidence (float): Minimum confidence score to keep an
                                             interaction.
         - n_genes_to_add (int): Number of external genes to add to the network.
 
@@ -134,36 +134,6 @@ class OptunaSampler:
         """
         return sum(f1_score_list) / len(f1_score_list)
 
-    def calculate_f1(self, gene_sets):
-        """
-        Calculate the score_f1 from the interactions's DataFrame.
-
-        Parameters:
-        - dictionnary: dictionnary with the set of original genes and
-                        added genes in the network.
-        Returns:
-        - float: score_f1 value between 0 and 1.
-        """
-        if len(gene_sets["added"]) == 0:
-            return 0
-
-        # Precision and Recall
-        true_positive = len(gene_sets["original"])
-        total_genes = len(gene_sets["all"])
-        if total_genes > 0:
-            precision = true_positive / total_genes
-            recall = true_positive / len(set(self.genes_list))
-        else:
-            precision = 0
-            recall = 0
-
-        if (precision + recall) > 0:
-            score_f1 = (2 * precision * recall) / (precision + recall)
-        else:
-            score_f1 = 0
-
-        return score_f1
-
     def analyse_best_trials(self, study, tol=1e-9):
         """
         Analyze all trials that achieved the best objective value in
@@ -242,7 +212,7 @@ class OptunaSampler:
         """
         confidence = trial.suggest_float("confidence", 0.7, 0.9,
                                          step=0.01)
-        n_genes_to_add = trial.suggest_int("n_genes_to_add", 5, 70)
+        n_genes_to_add = trial.suggest_int("n_genes_to_add", 5, 50)
         conservation_threshold = trial.suggest_float("conservation_threshold",
                                                      0.3, 0.95, step=0.01)
         filtered = []
@@ -265,7 +235,7 @@ class OptunaSampler:
                                  n_genes_to_add)
                 results_total = results.compute_edge_stats_with_metadata(j+1)
             mask = results_total['pourcentage'] >= conservation_threshold
-            filtered = results_total[mask]
+            filtered = results_total[mask].copy()
             genes_set = self.genes_set(filtered)
             f1_score = self.calcultate_fold_f1(genes_set,
                                                train_genes,
@@ -372,7 +342,7 @@ class OptunaSampler:
                              params['n_genes_to_add'])
             results_total = results.compute_edge_stats_with_metadata(j+1)
         mask = results_total['pourcentage'] >= params["conservation_threshold"]
-        filtered = results_total[mask]
+        filtered = results_total[mask].copy()
         genes_set = self.genes_set(filtered)
         print(genes_set)
         return filtered

@@ -1,0 +1,7 @@
+Best value: 0.12029904306220096
+Best parameters: {'confidence': 0.73, 'n_genes_to_add': 7, 'conservation_threshold': 0.3}
+All 1 best trials have identical best results.
+{'original': ['ASXL1', 'BRAF', 'CBL', 'KIT', 'KRAS', 'MAP2K1', 'MRAS', 'NF1', 'NRAS', 'PTPN11', 'RAF1', 'RASA2', 'RRAS', 'RRAS2', 'SOS1', 'SOS2', 'TERT'], 'added': ['AKT1', 'CBLB', 'EGFR', 'HNRNPA0', 'HRAS', 'MAP2K2', 'MAPK3', 'MYC', 'PIK3CA', 'RALGDS', 'RGL1', 'SHOC2', 'SNRPB', 'SRC', 'U2AF2'], 'all': ['AKT1', 'ASXL1', 'BRAF', 'CBL', 'CBLB', 'EGFR', 'HNRNPA0', 'HRAS', 'KIT', 'KRAS', 'MAP2K1', 'MAP2K2', 'MAPK3', 'MRAS', 'MYC', 'NF1', 'NRAS', 'PIK3CA', 'PTPN11', 'RAF1', 'RALGDS', 'RASA2', 'RGL1', 'RRAS', 'RRAS2', 'SHOC2', 'SNRPB', 'SOS1', 'SOS2', 'SRC', 'TERT', 'U2AF2']}
+Searching informations from UniProt
+Added genes present in the graph: 15
+Execution time: 3:53:34

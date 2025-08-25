@@ -278,10 +278,12 @@ def visualize_graph(global_graph, figsize=(15, 22), save_path=None):
     pos = nx.spring_layout(global_graph, k=1, iterations=50)
 
     original_nodes = [
-        n for n in global_graph.nodes() if global_graph.nodes[n]["type"] == "original"
+        n for n in global_graph.nodes()
+        if global_graph.nodes[n]["type"] == "original"
     ]
     added_nodes = [
-        n for n in global_graph.nodes() if global_graph.nodes[n]["type"] == "added"
+        n for n in global_graph.nodes()
+        if global_graph.nodes[n]["type"] == "added"
     ]
     edge_colors = []
     for _, _, data in global_graph.edges(data=True):
@@ -363,7 +365,8 @@ def calculate_gene_metrics(global_graph, results):
     closeness_centrality = nx.closeness_centrality(global_graph)
 
     try:
-        eigenvector_centrality = nx.eigenvector_centrality(global_graph, max_iter=1000)
+        eigenvector_centrality = nx.eigenvector_centrality(global_graph,
+                                                           max_iter=100)
     except nx.NetworkXException as err:
         print(f"Error computing eigenvector_centrality: {err}")
         eigenvector_centrality = degree_centrality
@@ -385,7 +388,7 @@ def calculate_gene_metrics(global_graph, results):
     def get_source_presence(gene):
         """
         Determine in how many sources a given gene appears.
-        
+
         Args
         gene : str: Gene name
         combined_df : pd.DataFrame: DataFrame of all interactions.
@@ -400,7 +403,8 @@ def calculate_gene_metrics(global_graph, results):
         ]
         sources = set(gene_interactions["source_db"].unique())
 
-        return {"nb_sources_total": len(sources), "sources_list": list(sources)}
+        return {"nb_sources_total": len(sources),
+                "sources_list": list(sources)}
 
     metrics_list = []
 

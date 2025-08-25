@@ -2,8 +2,7 @@
 """
 This script takes a list of genes (one per line in a text file),
 fetches internal and external protein-protein interactions from FunCoup,
-filters potential partner proteins based on degree and connection,
-and saves a network image of the expanded interaction network.
+filters potential partner proteins based on degree and connection.
 
 Requires:
     requests (install with `python -m pip install requests`)

@@ -17,8 +17,7 @@ class NetworkAnalysisResults:
         """
         Initialize the results container.
 
-        Parameters
-        ----------
+        Args
         original_genes : list[str] or set[str] or None
             The reference set of original genes. If None, only added genes
             will be tracked.
@@ -42,8 +41,7 @@ class NetworkAnalysisResults:
         """
         Add data for one iteration.
 
-        Parameters
-        ----------
+        Args
         links_df : pd.DataFrame
             DataFrame with at least columns ['gene_A', 'gene_B'] representing
             edges.
@@ -83,14 +81,10 @@ class NetworkAnalysisResults:
         - average score,
         - link type (original-original, added-added, or original-added),
         - metadata from the best scoring occurrence.
-
-        Parameters
-        ----------
+        Args
         nb_iterations : int
             Number of iterations to consider (used for normalization).
-
         Returns
-        -------
         pd.DataFrame
             Aggregated edge statistics with metadata.
         """
@@ -105,7 +99,8 @@ class NetworkAnalysisResults:
 
             for gene_col in ["gene_A", "gene_B"]:
                 if f"{gene_col}_type" not in df.columns:
-                    raise ValueError(f"Missing column '{gene_col}_type' in links_df")
+                    raise ValueError(f"Missing column '{gene_col}_type'"
+                                     f"in links_df")
 
             for _, row in df.iterrows():
                 gene1, gene2 = row["gene_A"], row["gene_B"]
@@ -139,7 +134,10 @@ class NetworkAnalysisResults:
             type_a, type_b = row["gene_A_type"], row["gene_B_type"]
 
             # Define link type
-            link_type = f"{type_a}-{type_b}" if type_a == type_b else "original-added"
+            if type_a == type_b:
+                link_type = f"{type_a}-{type_b}"
+            else:
+                link_type = "original-added"
 
             record = row.to_dict()
             record.update(

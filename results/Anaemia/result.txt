@@ -1,0 +1,15 @@
+Best value: 0.10743688469652464
+Best parameters: {'confidence': 0.8999999999999999, 'n_genes_to_add': 46, 'conservation_threshold': 0.8}
+All 1 best trials have identical best results.
+{'original': ['ALDOA', 'AMN', 'APOB', 'BMP4', 'BMP6', 'CD59', 'CUBN', 'CXCR4', 'CYB5R3', 'DKC1', 
+    'EGLN1', 'ENO1', 'GAPDH', 'HBA1', 'HBA2', 'HK2', 'HSPA9', 'KIF23', 'LARS2', 'NHP2', 'NOP10', 
+    'PALB2', 'PFKM', 'PGK1', 'PGM1', 'PKLR', 'RACGAP1', 'RAD51C', 'RPL11', 'RPL15','RPL18', 'RPL19', 
+    'RPL26', 'RPL27', 'RPL31', 'RPL35A', 'RPL5', 'RPL9', 'RPS10', 'RPS15A', 'RPS17', 'RPS19', 'RPS24',
+    'RPS26', 'RPS27', 'RPS28', 'RPS29', 'RPS7', 'SLC19A2', 'SLC2A1', 'STX11', 'TFRC', 'TPI1', 'YARS2'], 
+'added': ['CCR5', 'NOP56', 'PRC1', 'RPL12', 'RPL13', 'RPL14', 'RPL18A', 'RPL22', 'RPL22L1', 'RPL23', 'RPL23A', 'RPL24', 'RPL26L1', 'RPL30', 'RPL32', 'RPL34', 
+    'RPL36', 'RPL36A', 'RPL37A', 'RPL38', 'RPL39', 'RPL7', 'RPL7A', 'RPL8', 'RPLP0', 'RPLP1', 'RPLP2', 'RPS12', 'RPS13', 'RPS18', 'RPS2', 'RPS20', 'RPS21', 
+    'RPS23', 'RPS25', 'RPS4X', 'RPS9', 'VAMP8'], 
+    'all': ['ALDOA', 'AMN', 'APOB', 'BMP4', 'BMP6', 'CCR5', 'CD59', 'CUBN', 'CXCR4', 'CYB5R3', 'DKC1', 'EGLN1', 'ENO1', 'GAPDH', 'HBA1', 'HBA2', 'HK2', 'HSPA9', 'KIF23', 'LARS2', 'NHP2', 'NOP10', 'NOP56', 'PALB2', 'PFKM', 'PGK1', 'PGM1', 'PKLR', 'PRC1', 'RACGAP1', 'RAD51C', 'RPL11', 'RPL12', 'RPL13', 'RPL14', 'RPL15', 'RPL18', 'RPL18A', 'RPL19', 'RPL22', 'RPL22L1', 'RPL23', 'RPL23A', 'RPL24', 'RPL26', 'RPL26L1', 'RPL27', 'RPL30', 'RPL31', 'RPL32', 'RPL34', 'RPL35A', 'RPL36', 'RPL36A', 'RPL37A', 'RPL38', 'RPL39', 'RPL5', 'RPL7', 'RPL7A', 'RPL8', 'RPL9', 'RPLP0', 'RPLP1', 'RPLP2', 'RPS10', 'RPS12', 'RPS13', 'RPS15A', 'RPS17', 'RPS18', 'RPS19', 'RPS2', 'RPS20', 'RPS21', 'RPS23', 'RPS24', 'RPS25', 'RPS26', 'RPS27', 'RPS28', 'RPS29', 'RPS4X', 'RPS7', 'RPS9', 'SLC19A2', 'SLC2A1', 'STX11', 'TFRC', 'TPI1', 'VAMP8', 'YARS2']}
+Searching informations from UniProt
+Added genes present in the graph: 38
+Execution time: 14:19:45
