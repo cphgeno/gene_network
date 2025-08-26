@@ -1,9 +1,7 @@
 {
-  "_comment": "Configuration for gene interaction analysis  API to use",
-  "api_name": "test",
   "trials_number": 100,
   "run_number": 10,
   "input_file": "./data/gene_list_test.txt",
-  "output_file": "my_output_test.xlsx",
-  "output_graph": "network_test.png"
+  "output_file": "my_output.xlsx",
+  "output_graph": "network.png"
 }

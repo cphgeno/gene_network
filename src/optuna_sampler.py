@@ -212,7 +212,7 @@ class OptunaSampler:
         """
         confidence = trial.suggest_float("confidence", 0.7, 0.9,
                                          step=0.01)
-        n_genes_to_add = trial.suggest_int("n_genes_to_add", 5, 50)
+        n_genes_to_add = trial.suggest_int("n_genes_to_add", 5, 70)
         conservation_threshold = trial.suggest_float("conservation_threshold",
                                                      0.3, 0.95, step=0.01)
         filtered = []
